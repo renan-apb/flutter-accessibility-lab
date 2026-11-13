@@ -67,4 +67,3 @@ class _LiveRegionScreenState extends State<LiveRegionScreen> {
     );
   }
 }
-

@@ -88,4 +88,3 @@ class _FocusDemoScreenState extends State<FocusDemoScreen> {
     );
   }
 }
-

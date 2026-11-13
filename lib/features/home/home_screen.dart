@@ -105,4 +105,3 @@ class _DemoCard extends StatelessWidget {
     );
   }
 }
-

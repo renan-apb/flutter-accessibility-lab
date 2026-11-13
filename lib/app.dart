@@ -27,4 +27,3 @@ class AccessibilityLabApp extends StatelessWidget {
     );
   }
 }
-
