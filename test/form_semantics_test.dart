@@ -11,7 +11,6 @@ void main() {
     tester,
   ) async {
     final handle = tester.ensureSemantics();
-    addTearDown(handle.dispose);
 
     await tester.pumpWidget(buildSubject());
     await tester.tap(find.text('Save preferences'));
@@ -28,13 +27,14 @@ void main() {
       ),
       findsOneWidget,
     );
+
+    handle.dispose();
   });
 
   testWidgets('valid submission updates the semantic live region', (
     tester,
   ) async {
     final handle = tester.ensureSemantics();
-    addTearDown(handle.dispose);
 
     await tester.pumpWidget(buildSubject());
     await tester.enterText(
@@ -50,5 +50,7 @@ void main() {
       ),
       findsOneWidget,
     );
+
+    handle.dispose();
   });
 }

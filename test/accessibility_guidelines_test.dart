@@ -6,7 +6,6 @@ void main() {
     tester,
   ) async {
     final handle = tester.ensureSemantics();
-    addTearDown(handle.dispose);
 
     await tester.pumpWidget(const AccessibilityLabApp());
     await tester.pumpAndSettle();
@@ -15,13 +14,14 @@ void main() {
     await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
     await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
     await expectLater(tester, meetsGuideline(textContrastGuideline));
+
+    handle.dispose();
   });
 
   testWidgets('home screen exposes one semantic button per demo', (
     tester,
   ) async {
     final handle = tester.ensureSemantics();
-    addTearDown(handle.dispose);
 
     await tester.pumpWidget(const AccessibilityLabApp());
 
@@ -41,5 +41,7 @@ void main() {
       ),
       findsOneWidget,
     );
+
+    handle.dispose();
   });
 }
